@@ -35,7 +35,7 @@ const getProfileRanks = (req,res,db,bcrypt) => {
       if (isValid) {
         return db.select('*').from('users')
           .then(users => {
-            res.json(users[0])
+            res.json(users)
           })
           .catch(err => res.status(400).json('fail 1'))
       } else {
