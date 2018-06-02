@@ -12,20 +12,6 @@ const getProfile = (req,res,db) => {
   }).catch(err => res.status(400).json('error getting user'))
 }
 
-const getProfileRank = (req,res,db) => {
-  const {id} = req.params;
-  let found = false;
-  db.select('*').from('users').then(users => {
-    if(users.length) {
-      res.json(users)
-    } else {
-      res.status(400).json('users db not found')
-    }
-  }).catch(err => res.status(400).json('error getting user'))
-}
-
-
 module.exports = {
-  getProfile: getProfile,
-  getProfileRank: getProfileRank
+  getProfile: getProfile
 };

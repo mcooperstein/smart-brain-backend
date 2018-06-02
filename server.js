@@ -39,6 +39,8 @@ app.post('/signin', (req,res) => {
 
 app.post('/rank', (req,res) => {signin.getProfileRanks(req,res,db,bcrypt)})
 
+app.post('/getranks', (req,res) => {register.getProfileRank(req,res,db,bcrypt)})
+
 app.post('/register', (req,res) => {register.handleRegister(req,res,db,bcrypt)});
 
 app.get('/profile/:id', (req,res) => {profile.getProfile(req,res,db)});
