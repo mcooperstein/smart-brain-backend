@@ -22,7 +22,7 @@ const handleSignin = (req,res,db,bcrypt) => {
     .catch(err => res.status(400).json('unable to sign in'))
 }
 
-const getProfileRanks = (req,res,db) => {
+const getProfileRanks = (req,res,db,bcrypt) => {
   const {email, password} = req.body;
   if(!email || !password) {
     return res.status(400).json('incorrect form submission');
