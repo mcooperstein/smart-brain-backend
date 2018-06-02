@@ -35,14 +35,14 @@ const getProfileRanks = (req,res,db) => {
       if (isValid) {
         return db.select('*').from('users')
           .then(users => {
-            res.json(users)
+            res.json(users[0])
           })
-          .catch(err => res.status(400).json('unable to sign in'))
+          .catch(err => res.status(400).json('fail 1'))
       } else {
         res.status(400).json('incorrect username/password combination')
       }
     })
-    .catch(err => res.status(400).json('unable to sign in'))
+    .catch(err => res.status(400).json('fail 2'))
 }
 
 module.exports = {
