@@ -37,7 +37,7 @@ app.post('/signin', (req,res) => {
   signin.handleSignin(req,res,db,bcrypt)
 });
 
-app.get('/rank', (req,res) => {signin.getProfileRanks(req,res,db)})
+app.post('/rank', (req,res) => {signin.getProfileRanks(req,res,db)})
 
 app.post('/register', (req,res) => {register.handleRegister(req,res,db,bcrypt)});
 
